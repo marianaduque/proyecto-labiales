@@ -1,0 +1,17 @@
+body {
+    background: whitesmoke;
+    color: black;
+}
+
+.letras {
+    color: salmon;
+    font-weight: bold;
+}
+
+.menú {
+    background: salmon;
+}
+
+.letrasmenú {
+    color: white
+}
