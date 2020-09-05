@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIPGLOSS</title>
+    <title>LIPGLOSS ORGANIC</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="icon" type="images/png" href="images/Lapiz_labial.jpg">
 
-
 </head>
 
 <body>
+    <script>
+    </script>
     <div class="container">
         <br>
         <h1><strong>LIPGLOSS ORGANIC</strong></h1>
         <nav class="navbar navbar-expand-lg navbar-light menú">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
       </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -35,24 +36,17 @@
                         <a class="nav-link" href="ventas.html"><strong>Ventas</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="vision.html"><strong>Galería de fotos</strong></a>
+                        <a class="nav-link" href="galeriadefotos.html"><strong>Galería de fotos</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mision.html"><strong>Misión</strong></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>
-              Tipos</strong>
-            </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item letras" href="matte.html"><strong>Matte</strong></a>
-                            <a class="dropdown-item letras" href="brillo.html"><strong>Brillo Labial</strong></a>
-                            <a class="dropdown-item letras" href="perlado.html"><strong>Perlado</strong></a>
-                        </div>
+                        <a class="nav-link" href="carritodecompra.html"><strong>Carrito de compra</strong></a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contactenos.html" tabindex="-1" aria-disabled="true"><strong>Contáctenos</strong></a>
+                        <a class="nav-link" href="iniciarsesion.html" tabindex="-1" aria-disabled="true"><strong>Iniciar sesión</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cerrarsesion.html"><strong>Cerrar sesión</strong></a>
                     </li>
 
                 </ul>
@@ -92,44 +86,163 @@
         <br>
         <!-- cuerpo-->
         <h1 align="center"><strong> SISTEMA VENTAS </strong></h1>
+        <div class="container-fluid" style="width: 50%">
+            <form onsubmit=" return calcular(event)">
+                <div class="form-group row">
+                    <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre">
+                    </div>
+                    <span id="enombre"></span>
+                </div>
 
-        <div class="row">
-            <div class="col-sm" style="text-align: justify;">
-                <strong> En el año 2020 lipgloss organic. Estará consolidada como una emresa lider a nivel mundial en la comercialización de labiales,siendo competitiva y adaptable a la necesidades y expectativas de nuestros clientes. <br> <br>
-                Lealtad del cliente: Proporcionar productos,servicios y soluciones de la mejor calidad y ofrecer más valor a los clientes que merecen nuestro respeto y lealtad. <br> <br>
-                Beneficio:Obtener el suficiente beneficio para financiar el crecimiento nuestra empresa,crear valor para nuestros accionistas y proporcionar los recursos.  </strong>
-
+                <div class="form-group row">
+                    <label for="salario" class="col-sm-2 col-form-label">Salario Mensual</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="salario" placeholder="Salario" max="2000000" min="1000000">
+                    </div>
+                    <span id="esalario"></span>
+                </div>
+                <div class="form-group row">
+                    <label for="salario" class="col-sm-2 col-form-label">Fecha</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="fecha" placeholder="Fecha" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="valor_venta" class="col-sm-2 col-form-label">Valor venta</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="valor_venta" placeholder="Valor venta" min="15000000">
+                    </div>
+                    <span id="evalor_venta"></span>
+                </div>
+                <div class="form-group row">
+                    <label for="salario" class="col-sm-2 col-form-label">Zona</label>
+                    <div class="col-sm-10">
+                        <select class="custom-select mr-sm-2" id="zona" required>
+                                        <option selected value="Norte">Norte</option>
+                                        <option value="Sur">Sur</option>
+                                      </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="comision" class="col-sm-2 col-form-label">Valor comisión</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="comision" placeholder="0" readonly>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="valor_pagar" class="col-sm-2 col-form-label">Total a pagar</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="valor_pagar" placeholder="0" readonly>
+                    </div>
+                </div>
                 <br>
                 <br>
-                <br>
+                <button type="submit" align="center" class="btn btn-secondary btn-lg " onclick="calcular(event)">Calcular</button>
+                <button type="button" align="center" class="btn btn-secondary btn-lg" onclick="limpiar()">Limpiar</button>
+            </form>
+        </div>
 
 
-            </div>
 
-            <div class="container-fluid" style="background-color: salmon;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm">
-                            Dirección: Carrera 8 # 3-9 <br> Teléfono: 5935674 <br> Email: mislabiales@gmail.com
-                        </div>
-                        <div class="col-sm">
-                            <strong> By:MARIANA DUQUE♡ </strong> <br><br> Página:liporganic-md
-                        </div>
-                        <div class="col-sm">
-                            <a href="https://www.facebook.com">
-                                <img src="images/labial.jpg" width="80" height="70">
-                            </a>
-                            <img src="images/labial8.jpg" width="80" height="70">
-                            <img src="images/rojo.jpg" width="80" height="70">
-                        </div>
+        <br>
+        <br>
+
+        <div class="container-fluid" style="background-color: salmon;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        Dirección: Carrera 8 # 3-9 <br> Teléfono: 5935674 <br> Email: mislabiales@gmail.com
+                    </div>
+                    <div class="col-sm">
+                        <strong> By:MARIANA DUQUE♡ </strong> <br><br> Página:liporganic-md
+                    </div>
+                    <div class="col-sm">
+                        <a href="https://www.facebook.com">
+                            <img src="images/labial.jpg" width="80" height="70">
+                        </a>
+                        <img src="images/labial8.jpg" width="80" height="70">
+                        <img src="images/rojo.jpg" width="80" height="70">
                     </div>
                 </div>
             </div>
+        </div>
+
+        <script>
+            function calcular(e) {
+                e.preventDefault();
+
+                let nombre = document.getElementById("nombre").value;
+                let salario = document.getElementById("salario").value;
+                let fecha = document.getElementById("fecha").value;
+                let valor_venta = document.getElementById("valor_venta").value;
+                let zona = document.getElementById("zona").value;
+                let comision = document.getElementById("comision");
+                let valor_pagar = document.getElementById("valor_pagar");
+                let valorComision = 0;
+
+                let errorNombre = document.getElementById("enombre");
+                let errorSalario = document.getElementById("esalario");
+                let errorValorVenta = document.getElementById("evalor_venta");
+
+                // let nombre2 = $("#nombre").val();    
+                errorNombre.innerText = "";
+                errorSalario.innerText = "";
+                errorValorVenta.innerText = "";
+                if (nombre == "") {
+                    // alert("Debe Ingresar un nombre")
+                    errorNombre.innerText = "Debe Ingresar un nombre";
+                    errorNombre.style.color = "red";
+                }
+                if (salario == "" || salario < 1000000 || salario > 2000000) {
+                    // alert("Debe ingresar un salario valido que se encuentre en el rango: 1000000 - 2000000");
+                    errorSalario.innerText = "Debe ingresar un salario valido que se encuentre en el rango: 1000000 - 2000000";
+                    errorSalario.style.color = "red";
+                }
+
+                if (valor_venta == "" || valor_venta < 15000000) {
+                    // alert("Debe ingresar un valor de venta valido que sea mayor o igual a 15000000");
+                    errorValorVenta.innerText = "Debe ingresar un valor de venta valido que sea mayor o igual a 15000000";
+                    errorValorVenta.style.color = "red";
+                }
+
+                if (zona == "Norte") {
+                    valorComision = (5 * valor_venta) / 100;
+                } else {
+                    valorComision = (3 * valor_venta) / 100;
+                }
+
+                console.log(comision)
+                comision.value = valorComision;
+                if (valorComision > 0 && Number(salario) > 0) {
+                    valor_pagar.value = valorComision + Number(salario);
+                }
 
 
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+            }
+
+            function limpiar() {
+                let errorNombre = document.getElementById("enombre");
+                let errorSalario = document.getElementById("esalario");
+                let errorValorVenta = document.getElementById("evalor_venta");
+
+                // let nombre2 = $("#nombre").val();    
+                errorNombre.innerText = "";
+                errorSalario.innerText = "";
+                errorValorVenta.innerText = "";
+                document.getElementById("nombre").value = "";
+                document.getElementById("salario").value = "";
+                document.getElementById("fecha").value = "";
+                document.getElementById("valor_venta").value = "";
+                document.getElementById("zona").value = "";
+                document.getElementById("comision") = 0;
+                document.getElementById("valor_pagar") = 0;
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 
 </html>
